@@ -1,0 +1,16 @@
+on:
+  workflow_call:
+    inputs:
+      input-string:
+        required: false
+        type: string
+        default: 'No input provided'
+    secrets:
+      password:
+        required: true
+    jobs:
+      reusable_workflow_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: print
+          run: echo "Hello From reusable workflow"
